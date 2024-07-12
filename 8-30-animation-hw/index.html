@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- icon-font -->
+  <link href="fonts/style.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Animation</h1>
+
+    <div class="box"></div>
+
+    <div class="enter"></div>
+
+    <!-- loading-button -->
+
+    <button class="loading-button">loading</button>
+
+    <div class="enter"></div>
+
+    <!-- animation circle-box -->
+
+    <div class="content">
+      <div class="content-circle">
+      </div>
+    </div>
+
+    <div class="enter"></div>
+
+    <!-- sun -->
+
+    <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt=Sun width="300" height="300">
+
+
+    <!-- HW-30 -->
+
+    <div class="box-wrapper">
+      <div class="box-child"></div>
+    </div>
+
+
+    <!-- hw - 3-25 position -->
+
+    <!-- <ul class="list-test">
+      <li class="pink item"></li>
+      <li class="green item"></li>
+      <li class="blue item"></li>
+    </ul>
+    <div class="enter"></div> -->
+
+    <!-- hw - 5-27 position -->
+
+    <!-- <div class="menu-box">
+      <div class="menu-wrapper">
+        <div class="close-menu-link">Menu here</div>
+        <ul class="menu-list">
+          <li class="menu-list-item">jkuh</li>
+          <li class="menu-list-item">jkuh</li>
+          <li class="menu-list-item">jkuh</li>
+        </ul>
+      </div>
+    </div> -->
+
+
+  </div>
+
+  <script>
+    (() => {
+      const refs = {
+        openModalBtn: document.querySelector("[data-modal-open]"),
+        closeModalBtn: document.querySelector("[data-modal-close]"),
+        modal: document.querySelector("[data-modal]"),
+      };
+  
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+  
+      function toggleModal() {
+        refs.modal.classList.toggle("is-hidden");
+        document.body.classList.toggle("no-scroll");
+      }
+    })();
+  </script>
+
+</body>
+
+</html>
