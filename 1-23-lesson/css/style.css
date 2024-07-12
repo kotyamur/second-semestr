@@ -1,0 +1,11 @@
+:root {
+  /* *============ CSS-змінні ============ */
+  --color-font-body: #101604;
+  --color-background-body: #f4d1ff;
+}
+
+body {
+  padding: 20px;
+  font-family: 'Montserrat', serif;
+  color: var(--color-font-body);
+}

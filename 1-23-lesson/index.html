@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <h1>векторна графіка</h1>
+    <h2>графічні формати</h2>
+    <p>
+        Зображення класифікують за такими графічними форматами - растрова та векторна графіка
+    </p>
+    <ul>
+        <li>растрові формати - JPEG, PNG</li>
+        <li>Векторна графіка​ (SVG, Scalable Vector Graphics)</li>
+    </ul>
+
+    <p>SVG (Scalable Vector Graphics) - формат графіки і мова для опису векторних зображень. Всередині файл не бінарний, а звичайний текст (XML), що описує об'єкти, їх ефекти і поведінку.</p>
+    <p>Векторна графіка має ряд переваг.</p>
+
+    <ul>
+        <li>Масштабування - на відміну від растрової графіки, SVG не втрачає якість при масштабуванні.</li>
+        <li>Розмір файлу - векторні зображення важать набагато менше растрових, якщо використовуються для іконок або іншої абстрактної графіки. Використання вектора для фотореалістичних зображень навпаки призводить до величезного розміру файлу.</li>
+        <li>Динамічність - за допомогою CSS і JavaScript можна змінювати параметри векторного зображення, наприклад колір або рамки.</li>
+    </ul>
+
+    <img src="https://lh6.googleusercontent.com/bli-k2JlBnXu2oRRcESKsTx9cv6nMcXxUXzKik6nNPwCp1qIb68iHJZGrI259IPmTzr36pdP1oC9qCes7KFeLvyU5XqtHxdUBs61rKLUiInvPvFazOFU3UjMzaaXDp00qafODCEsd2xsLEasXoUTeKs">
+
+    <img src="https://lh3.googleusercontent.com/BkzYeiX_xyH2Zsjs6O0n_pLBe8bBoeLimFJR2_ezx1JmR2wv3ZC-iW1xp7BifU9Huoc_vADuy9iuoKkVo3t6WsGPpmTKsDOFY6lbU_cIYujbFqBeOoP7alqkidWogIPXl2zRRNl0S37I5PjCDB42cNw">
+    <a href="https://jakearchibald.github.io/svgomg/">для оптимізації векторної графіки використовують сервіс svgomg.</a>
+
+    <p>Векторну графіку зберігають у файлах з розширенням .svg. Це звичайні текстові файли, в яких на верхньому рівні знаходиться тег svg з набором службових атрибутів, що вказують, в якій версії мови розмітки та за якою версією SVG-специфікації написаний документ
+
+    </p>
+
+    <h2>use</h2>
+    <svg aria-hidden="true" style="position:absolute;width:0;height:0" xmlns="http://www.w3.org/2000/svg" overflow="hidden">
+        <defs>
+          <!-- Trash can icon -->
+          <symbol id="delete" viewBox="0 0 32 32">
+            <path d="M8 25.333C8 26.8 9.2 28 10.667 28h10.667c1.467 0 2.667-1.2 2.667-2.667v-16h-16v16zm17.333-20h-4.667L19.333 4h-6.667l-1.333 1.333H6.666V8h18.667V5.333z" />
+          </symbol>
+          <!-- Camera icon -->
+          <symbol id="camera" viewBox="0 0 32 32">
+            <path d="M20.267 16a4.267 4.267 0 11-8.534 0 4.267 4.267 0 018.534 0z" />
+            <path d="M12 2.667L9.56 5.334H5.333a2.675 2.675 0 00-2.667 2.667v16c0 1.467 1.2 2.667 2.667 2.667h21.333c1.467 0 2.667-1.2 2.667-2.667v-16c0-1.467-1.2-2.667-2.667-2.667h-4.227l-2.44-2.667h-8zm4 20c-3.68 0-6.667-2.987-6.667-6.667S12.32 9.333 16 9.333 22.667 12.32 22.667 16 19.68 22.667 16 22.667z" />
+          </symbol>
+          <!-- Portfolio icon -->
+          <symbol id="work" viewBox="0 0 32 32">
+            <path d="M26.667 8h-5.333V5.333a2.658 2.658 0 00-2.667-2.667h-5.333a2.658 2.658 0 00-2.667 2.667V8H5.334a2.646 2.646 0 00-2.653 2.667l-.013 14.667a2.658 2.658 0 002.667 2.667h21.333a2.658 2.658 0 002.667-2.667V10.667A2.658 2.658 0 0026.668 8zm-8 0h-5.333V5.333h5.333V8z" />
+          </symbol>
+        </defs>
+      </svg>
+    
+
+      <ul class="icon-list">
+        <li>
+          <svg class="icon" width="80" height="80">
+            <use href="#delete"></use>
+          </svg>
+        </li>
+        <li>
+          <svg class="icon" width="80" height="80">
+            <use href="#camera"></use>
+          </svg>
+        </li>
+        <li>
+          <svg class="icon" width="80" height="80">
+            <use href="./images/sprite.svg#work"></use>
+          </svg>
+        </li>
+      </ul>
+
+      <h3>Атрибути width і height задають розмір робочої області перегляду (viewport)</h3>
+        <div style="border: 1px solid blue; width: 400px; margin: 0 auto;">
+            <svg width="400" height="200" viewBox="0 0 400 200">
+                <circle r="75" cx="50%" cy="50%" fill="tomato" />
+            </svg>
+        </div>
+
+       <p>Значення x і y управляють зміщенням щодо початкових координат області перегляду (viewbox) і дозволяють відобразити тільки частину зображення. Значення width і height управляють масштабуванням.</p>
+
+
+       <!-- <svg fill="red">
+        <use href="./images/symbol-defs.svg#icon-instagram-2"></use>
+       </svg> -->
+    </body>
+
+</html>
