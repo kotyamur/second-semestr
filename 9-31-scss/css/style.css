@@ -1,0 +1,29 @@
+:root {
+  /** ============ CSS-змінні ============ */
+  --color-font-body: #220c0c;
+  --color-title-lesson: #094b00;
+  --color-title-section: rgb(17, 168, 0);
+  --color-title-subsection: rgb(1, 192, 5);
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
+  padding: 20px 20px 150px;
+  color: var(--color-font-body);
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+.enter {
+  height: 50px;
+}
+
