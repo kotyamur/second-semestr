@@ -1,0 +1,281 @@
+:root {
+  /** ============ CSS-змінні ============ */
+  --color-font-body: #220c0c;
+  --color-title-lesson: #094b00;
+  --color-title-section: rgb(17, 168, 0);
+  --color-title-subsection: rgb(1, 192, 5);
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
+  padding: 20px 20px 150px;
+  color: var(--color-font-body);
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  margin-bottom: 100px;
+  font-size: 36px;
+}
+
+.enter {
+  height: 100px;
+}
+
+/* mobile menu */
+/* header */
+.header {
+  width: 1024px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 35px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+/* nav-menu */
+nav {
+/*   width: 65%; */
+  flex-grow: 3;
+}
+.nav_menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* join_block */
+.join_block {
+  flex-grow: 1;
+  text-align: right;
+}
+.join {
+  background: none;
+  border: none;
+  padding: 0 20px;
+  transition: opacity .3s;
+}
+.started {
+  background: #ffcc01;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 25px 13px;
+  transition: opacity .3s;
+}
+.join:hover,
+.started:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.nav_menu a,
+.join_block {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* hiden input */
+input[type="checkbox"],
+label {
+  display: none;
+}
+
+/* mobile menu */
+@media (max-width: 768px) {
+  .nav_menu {
+    display: none;
+  }
+  
+  label {
+    display: block;
+    /* background-color: aqua; */
+    height: 30px;
+    width: 30px;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+  }
+  label:hover {
+    cursor: pointer;
+  }
+  
+  label span,
+  label span::before,
+  label span::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    right: 0;
+    transition: .3s;
+  }
+  label span {
+    top: 15px;
+  }
+  label span::before {
+    top: -8px;
+  }
+  label span::after {
+    top: 8px;
+  }
+
+  nav {
+    order: 1;
+  }
+  
+  input[type="checkbox"]:checked ~ .nav_menu{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav_menu {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 70%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 12px 8px #ececec;
+  }
+  .nav_menu li {
+    margin: 15px 0;
+  }
+  input[type="checkbox"]:checked ~ label span {
+    transform: rotate(-45deg);
+  }
+  input[type="checkbox"]:checked ~ label span::before {
+    top: 0;
+    /* transform: rotate(0); */
+  }
+  input[type="checkbox"]:checked ~ label span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  
+}
+
+/* mob-menu js */
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.page-header {
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.page-header .page-container {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 50px;
+}
+
+.menu .link {
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu .link:hover,
+.menu .link:focus {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: #3f51b5;
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+}
+
+.mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu .link {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
