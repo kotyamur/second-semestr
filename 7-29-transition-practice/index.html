@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- Бібліотека анімацій animate.style -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<!--! Бібліотека анімації AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Анімація в кнопці​ -->
+    <h2>Анімація в кнопці</h2>
+    <!-- <button class="btn" data-aos="zoom-out-left">Клікни мене</button> -->
+    <button class="btn">Клікни мене</button>
+
+    <!-- підкреслення вкладки при ховері -->
+    <h2>підкреслення вкладки при ховері</h2>
+
+    <!-- <ul class="menu" data-aos="fade-up-right"> -->
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="menu-link">Блог</a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link">Профіль</a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link">Галерея</a>
+      </li>
+    </ul>
+
+    <!-- статтю з позиціонованими кнопками -->
+    <h2>стаття з позиціонованими кнопками</h2>
+    <!-- <article class="product" data-aos="fade-right"> -->
+      <article class="product">
+      <div class="product-thumb">
+        <img src="./images/landscape.webp" alt="picture">
+        <div class="product-overlay">
+          <div class="product-actions">
+            <button aria-label="У вибране" class="item">
+              <svg class="icon">
+                <use href="./images/symbol-defs.svg#icon-twitter">
+                </use>
+              </svg>
+            </button>
+            <button aria-label="У вибране" class="item">
+              <svg class="icon">
+                <use href="./images/symbol-defs.svg#icon-twitter">
+                </use>
+              </svg>
+            </button>
+            <button aria-label="У вибране" class="item">
+              <svg class="icon">
+                <use href="./images/symbol-defs.svg#icon-twitter">
+                </use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="product-meta">
+        <h2 class="product-name">Червоні яблуки</h2>
+        <p class="product-price">Ціна: 100 кредитів</p>
+      </div>
+    </article>
+
+    <!-- модальне вікно -->
+    <h2>модальне вікно</h2>
+
+    <button class="btn-open" data-modal-open>
+      <a>Відкрити модалку</a>
+    </button>
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="button" data-modal-close>
+            Закрити
+          </button>
+          <p>....</p>
+        </div>
+      </div>
+
+       <!-- .Бібліотека анімацій animate.style -->
+       <h2>Бібліотека анімацій animate.style</h2>
+          <p class="animate__animated animate__bounce">An animated element - <u>animated+bounce</u></p>
+          <p class="animate__animated animate__bounceInDown">An animated element - <u>bounceInDown</u></p>
+    
+
+  </div>
+
+  <script>
+    (() => {
+      const refs = {
+        openModalBtn: document.querySelector("[data-modal-open]"),
+        closeModalBtn: document.querySelector("[data-modal-close]"),
+        modal: document.querySelector("[data-modal]"),
+      };
+  
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+  
+      function toggleModal() {
+        refs.modal.classList.toggle("is-hidden");
+        document.body.classList.toggle("no-scroll");
+      }
+    })();
+  </script>
+  <!--! Скрипт бібліотек анімації AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
+
+</body>
+
+</html>
