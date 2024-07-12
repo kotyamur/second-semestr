@@ -1,0 +1,267 @@
+:root {
+  /** ============ CSS-змінні ============ */
+  --color-font-body: #220c0c;
+  --color-background-body: #f8ffde;
+  --color-title-lesson: #0c2d00;
+  --color-title-section: rgb(0, 91, 44);
+  --color-title-subsection: rgb(0, 123, 94);
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
+  padding: 20px 20px 150px;
+  color: var(--color-font-body);
+}
+
+.title-lesson {
+  text-align: center;
+  color: var(--color-title-lesson);
+}
+
+.title-section {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--color-title-section);
+}
+
+.title-subsection {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-style: italic;
+  color: var(--color-title-subsection);
+}
+
+.part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+/*! 1.Підключення векторної графіки в елементі <img> */
+.part_1 img {
+  margin: 5px auto;
+  border: 2px dashed #2a2a2a;
+  border-radius: 8px;
+  background-color: rgb(255, 238, 193);
+}
+
+.part_1 img:hover {
+  cursor: pointer;
+  /* ✅ */
+  background-color: rgb(157, 255, 255);
+  /* ❌ */
+  fill: green;
+  stroke: yellow;
+  stroke-width: 5;
+}
+
+/*! 2.Підключення векторної графіки як фон елемента */
+.part_2 .box {
+  width: 240px;
+  height: 240px;
+  border: 2px dashed #2a2a2a;
+  border-radius: 8px;
+  background-color: rgb(255, 238, 193);
+  background-image: url(../svg/instagram.svg);
+  /* !!!!!!! ❌--- sprite НЕ ПРАЦЮЄ ---❌ !!!!!! */
+  /* background-image: url(../images/icons-sprite.svg#instagram); */
+  /* !!!!!!________________________________!!!!!! */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.part_2 .box:hover {
+  cursor: pointer;
+  /* ❌ */
+  fill: green;
+  stroke: yellow;
+  stroke-width: 5;
+  /* ✅ */
+  border: 2px solid red;
+  background-color: rgb(157, 255, 255);
+}
+
+/*! 3.Підключення векторної графіки як як вбудований SVG (inline SVG) */
+.part_3 .icon {
+  width: 200px;
+  height: 200px;
+  /* ❌ */
+  color: grey; 
+  fill: grey; 
+}
+
+.part_3 .icon:hover {
+  cursor: pointer;
+  /* ✅ */
+  stroke: orange;
+  /* ❌ */
+  fill: green;
+  background-color: yellow;
+}
+
+/* ✅ */
+/* .part_3 .icon:hover .letter {
+  cursor: pointer;
+  fill: palevioletred;
+} */
+/* ✅ */
+/* .part_3 .icon:hover .background {
+  cursor: pointer;
+  fill: green;
+  stroke: yellow;
+  stroke-width: 5;
+} */
+
+/*! 4-1.Підключення векторної графіки як SVG-спрайт ​*/
+.part_41 .icon2 {
+  border: 2px dashed #2a2a2a;
+  border-radius: 8px;
+  fill: darkgreen;
+}
+/* ✅ */
+.part_41 .icon2:hover {
+  fill: #03a9f4;
+  stroke: crimson;
+  stroke-width: 2;
+}
+
+/*! 5.Підключення іконок з макету WebStudio як SVG-спрайт ​*/
+.part_5 .icon-webstudio {
+  width: 830px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* align-items: center; */
+  align-content: flex-start;
+  outline: 4px double #ffcfc6;
+}
+
+.part_5 .icon3 {
+  display: block;
+  border: 1px dashed #212121;
+  border-radius: 8px;
+  /* border-radius: 50%; */
+  fill: #2383ff;
+  background-color: rgb(255, 235, 208);
+}
+/* ✅ */
+.part_5 .icon3:hover {
+  fill: #b2ff85;
+  stroke: crimson;
+  /* stroke-width: 2; */
+  background-color: rgb(252, 156, 255);
+}
+
+/*! 6.Підключення SVG-зображення як фон елемента за  допомогою SVG-спрайт ​*/
+.part_6 .box {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed blueviolet;
+  border-radius: 8px;
+  background-image: url("../svg/instagram.svg");
+  /* !!!!!!! ❌--- sprite НЕ ПРАЦЮЄ ---❌ !!!!!! */
+  /* background-image: url("../images/icons-sprite.svg#astronaut"); */
+  /* !!!!!!________________________________!!!!!! */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #00ff72;
+}
+
+.part_6 .box:hover {
+  /* ❌ */
+  fill: green;
+  stroke: yellow;
+  stroke-width: 5;
+  /* ✅ */
+  background-color: #b2ff85;
+}
+
+
+/* ! */
+.part_7 {
+  display: none;
+}
+/* ❌ - НЕ ПРАЦЮЄ */
+/*! 7.Іконочний шрифт-1 ​*/ 
+.part_7 .social-networks {
+  font-size: 40px;
+}
+
+.part_7 .link-compass2 {
+  color: brown;
+}
+.part_7 .link-compass2:hover {
+  font-size: 60px;
+  color: rgb(42, 165, 85);
+}
+
+
+/* ! */
+.part_8 {
+  display: none;
+}
+/* ❌ - НЕ ПРАЦЮЄ */
+/*! 8.Іконочний шрифт-2 ​*/ 
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+.part_8 .social-networks {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.part_8 .social-networks li {
+  margin: 0.15em;
+  position: relative;
+  font-size: 1.2em;
+}
+
+.part_8 .social-networks i {
+  color: #fff;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  transition: all 0.3s ease-out;
+}
+
+.part_8 .social-networks a {
+  display: inline-block;
+}
+
+.part_8 .social-networks a:before {
+  transform: scale(1);
+  content: " ";
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #1441e6, #00ff72);
+  transition: all 0.2s ease-out;
+}
+
+.part_8 .social-networks a:hover:before {
+  transform: scale(0);
+  transition: all 0.3s ease-in;
+}
+
+.part_8 .social-networks a:hover i {
+  transform: scale(2.2);
+  color: #1441e6;
+  background: -webkit-linear-gradient(45deg,  #1441e6, #00ff72);
+  transition: all 0.2s ease-in;
+}
+
+
+
+
+/*? ______________________________________________________ */
+/* ! */
+.part_0 {
+  display: none;
+}
+/*! 0.Заголовок */
