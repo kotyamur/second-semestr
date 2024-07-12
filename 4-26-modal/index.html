@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<!-- icon-font -->
+    <link href="fonts/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+
+    <h2>
+        Модальне вікно
+    </h2>
+
+    <!-- modal -->
+    <button class="btn-open" data-modal-open>Відкрити модалку</button>
+
+    <!-- <div class="backdrop" data-modal> -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="btn" data-modal-close>Закрити</button>
+            <p>It is modal</p>
+        </div>
+    </div>
+
+    <h2>Атрибути</h2>
+    <!-- required -->
+
+    <h3>Атрибут required - поле форми як обов'язкове для заповнення</h3>
+    <form>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required />
+        </label>
+      
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Атрибути minlength і maxlength -->
+
+      <h3>
+        Атрибути minlength і maxlength накладають обмеження на кількість символів, що вводяться, наприклад для пароля або імені користувача.</h3>
+
+      <form>
+        <label>
+          Username
+          <input type="text" name="username" required minlength="3" />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required minlength="6" maxlength="12" />
+        </label>
+      
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- min і max -->
+
+      <h3>
+        Атрибути min і max дозволяють перевірити входження чисельного значення у вказаний діапазон. Можуть використовуватися тільки в полях з типом number, range або date.
+      </h3>
+
+      <form>
+        <label>
+          How many pizzas do you want to order?
+          <input type="number" name="amount" required min="1" max="10" />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+
+      <h3>
+        Атрибут pattern дозволяє вказати регулярний вираз (шаблон), щодо якого буде перевірятися значення поля. Використовується для розширення базової валідації.
+      </h3>
+
+      <form>
+        <label>
+          Username
+          <input type="text" name="text" required pattern="^[a-zA-Z]+\s[a-zA-Z]+$" title="Username must be two words separated by space." />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required minlength="6" maxlength="12" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+
+      <h2>
+        Псевдокласи стану
+      </h2>
+
+            <!-- :enabled і :disabled -->
+
+      <h3> :enabled і :disabled</h3>
+      <p>
+        дозволяють вибрати елемент в активному або відключеному стані, який визначається присутністю або відсутністю булевого атрибута disabled
+      </p>
+
+      <button class="btn">Active button</button>
+<button class="btn" disabled>Disabled button</button>
+
+<!-- :checked -->
+
+<h3>:checked​ застосовується до радіокнопок і чекбоксів, та дозволяє вибрати тільки відзначені поля</h3>
+
+<form class="form">
+
+    <p class="form-caption">What are your hobbies?</b>
+  
+    <div class="form-field">
+      <input type="checkbox" class="form-input" name="hobby" value="sports" id="sports">
+      <label class="form-label" for="sports">Sports</label>
+    </div>
+  
+    <div class="form-field">
+      <input type="checkbox" class="form-input" name="hobby" value="music" id="music">
+      <label class="form-label" for="music">Music</label>
+    </div>
+  
+    <div class="form-field">
+      <input type="checkbox" class="form-input" name="hobby" value="books" id="books">
+      <label class="form-label" for="books">Books</label>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- :in-range і :out-of-range -->
+  <p>
+    ці псевдокласи застосовуються до елементів range, number і date, якщо у них вказані атрибути min і max.
+  </p>
+  <p>
+    !!!!! стилі застосовуються ще до введення будь-якого значення.
+  </p>
+
+  <form class="form">
+    <div class="form-field">
+      <label for="amount-1" class="form-label">How many pizzas do you want to order?</label>
+      <input type="number" required min="1" max="10" step="1" value="0" name="amount-1" id="amount-1" class="form-input">
+    </div>
+      <div class="form-field">
+      <label for="amount-2" class="form-label">How many pizzas do you want to order?</label>
+      <input type="number" required min="1" max="10" step="1" value="3" name="amount-2" id="amount-2" class="form-input">
+    </div>
+      <div class="form-field">
+      <label for="amount-3" class="form-label">How many pizzas do you want to order?</label>
+      <input type="number" required min="1" max="10" step="1" name="amount-3" id="amount-3" class="form-input">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- :required і :optional​ -->
+
+  <h3>
+    :required і :optional
+  </h3>
+  <p>
+    !!!!! стилі застосовуються ще до введення будь-якого значення.
+  </p>
+
+  <form class="form">
+    <label class="form-label">
+      <span class="label-text">Username (optional)</span>
+      <input type="text" class="form-input" name="username">
+    </label>
+  
+    <label class="form-label">
+      <span class="label-text">Email (required)</span>
+      <input type="email" class="form-input" name="mail" required>
+    </label>
+  
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- :valid і :invalid -->
+  <h3>
+    :valid і :invalid
+  </h3>
+  <p>
+    !!!!! стилі застосовуються ще до введення будь-якого значення.
+  </p>
+
+  <form class="form">
+    <label class="form-label">
+      <span class="label-text">Username</span>
+      <input type="text" class="form-input" name="username" required minlength="3">
+    </label>
+  
+    <label class="form-label">
+      <span class="label-text">Email</span>
+      <input type="email" class="form-input" name="mail" required>
+    </label>
+  
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- :placeholder-shown -->
+  <h3>:placeholder-shown</h3>
+
+  <form class="form form-placeholder">
+    <label class="form-label">
+      <span class="label-text">Username</span>
+      <input type="text" class="form-input" name="username" placeholder="Jacob Mercer">
+    </label>
+  
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- :focus-within -->
+  <h3>:focus-within</h3>
+  <p>
+    Застосовується до елемента, коли він сам або елементи всередині нього отримують фокус. На відміну від :focus, який вибирає сам елемент, що отримав фокус, :focus-within працює для предків. Це дозволяє застосувати стилі до мітки, форми або окремих її частин, коли користувач взаємодіє з полями.
+  </p>
+  <form class="form form-with">
+    <label class="form-label">
+      <span class="label-text">First name</span>
+      <input class="form-input" type="text" name="firstName"  />
+    </label>
+    <label class="form-label">
+      <span class="label-text">Last name</span>
+      <input class="form-input" type="text" name="lastName" />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Композиція псевдокласів -->
+
+  <h3>Композиція псевдокласів</h3>
+
+  <form class="form form-comp">
+    <label class="form-label">
+      <span class="label-text">Username</span>
+      <input type="text" class="form-input" name="username" placeholder="Jacob Mercer" minlength="3" required>
+    </label>
+  
+    <label class="form-label">
+      <span class="label-text">Email</span>
+      <input type="email" class="form-input" name="mail" placeholder="jacob@mail.com" required>
+    </label>
+  
+    <button type="submit">Submit</button>
+  </form>
+</div> 
+
+<script>
+  (() => {
+const refs = {
+  openModalBtn: document.querySelector("[data-modal-open]"),
+  closeModalBtn: document.querySelector("[data-modal-close]"),
+  modal: document.querySelector("[data-modal]"),
+};
+
+refs.openModalBtn.addEventListener("click", toggleModal);
+refs.closeModalBtn.addEventListener("click", toggleModal);
+
+function toggleModal() {
+  refs.modal.classList.toggle("is-hidden");
+  document.body.classList.toggle("no-scroll");
+}
+})();
+</script>
+
+</body>
+
+</html>
