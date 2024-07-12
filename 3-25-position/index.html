@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<!-- icon-font -->
+    <link href="fonts/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <h1 class="title-lesson">Урок-3. “Позиціонування елементів — призначення та властивості”</h1>
+        
+        
+        <!--! 1.position: static -->
+        <div class="part part_1">
+            <h2 class="title-section">1.position: static</h2>
+            <div class="holder">
+                Без позиціонування ("position: static").
+                <h2>Заголовок</h2>
+                <div>А тут - якийсь текст... <br/>
+                     ... у два рядки!</div>
+            </div>
+        </div>
+        
+        
+        <!--! 2.position: relative -->
+        <div class="part part_2">
+            <h2 class="title-section">2.position: relative</h2>
+            <div class="holder">
+                Заголовок в правому верхньому кутку документа.
+                <h2>Заголовок</h2>
+                <div>А тут - якийсь текст... <br/>
+                     ... у два рядки!</div>
+            </div>
+        </div>
+        
+        
+        <!--! 3-1.position: absolute від <body> -->
+        <div class="part part_31">
+            <h2 class="title-section">3-1.position: absolute (від &lt;body&gt;)</h2>
+            <div class="holder">
+                Заголовок в правому верхньому кутку документа.
+                <h2>Заголовок</h2>
+                <div>А тут - якийсь текст... <br/>
+                     ... у два рядки!</div>
+            </div>
+        </div>
+        
+        
+        <!--! 3-2.position: absolute від <father> -->
+        <div class="part part_32">
+            <h2 class="title-section">3-2.position: absolute (від &lt;father&gt;)</h2>
+            <div class="main-father">
+                <div class="holder">
+                    Заголовок в правому верхньому кутку документа.
+                    <h2>Заголовок</h2>
+                    <div>А тут - якийсь текст... <br/>
+                         ... у два рядки!</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--! 4.position: fixed -->
+        <div class="part part_4">
+            <h2 id="up" class="title-section">4.position: fixed</h2>
+            <div class="holder">
+                <a href="#" id="top">Догори (залищається при прокрутці)</a>
+        
+                Фіксоване позиціонування.
+                        
+                <p>Текст сторінки.. Прокрути мене...</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing </p>
+            </div>
+        
+        
+        <!--! 5.position: sticky -->
+        <div class="part part_5">
+            <h2 class="title-section">5.position: sticky</h2>
+            <p>Для реалізації липкого позиціонування необхідні всього три умови:</p>
+                <ul>
+                    <li>У липкого елемента повинно бути встановлено позиціонування position: sticky.</li>
+                    <li>У липкого елемента повинно бути встановлено положення, наприклад top: 0.</li>
+                    <li>Елемент-контейнер повинен бути більшим по висоті за липкий елемент</li>
+                </ul>
+            <a href="https://codepen.io/goit-academy/pen/pogXLWz" target="_blank">example</a>
+        </div>
+        
+        <!--! 6.Властивість z-index-->
+        <div class="part part_6">
+            <h2 class="title-section">6.Властивість z-index</h2>
+            <div class="container">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+            </div>
+        </div>
+      
+
+        <!-- практикаааа -->
+
+        <p style="margin-top: 500px; margin-bottom: 100px;">Practice 1</p>
+
+        <div class="container">
+            <div class="box"></div>
+            <div class="box relative"></div>
+            <div class="box"></div>
+        </div>
+
+
+        <!--  -->
+        <p style="margin-top: 200px; margin-bottom: 100px;">Practice 2</p>
+
+        <div class="container">
+            <div class="thumb">
+              <img src="https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=320" alt="two-yellow-labrador-retriever-puppies" width="250">
+              <p class="label">Dog</p>
+            </div>
+          
+            <div class="thumb">
+              <img src="https://images.pexels.com/photos/2558605/pexels-photo-2558605.jpeg?auto=compress&cs=tinysrgb&dpr=2&&w=320" alt="adorable-animal-blur-cat" width="250">
+              <p class="label">Cat</p>
+            </div>
+          
+            <div class="thumb">
+              <img src="https://images.pexels.com/photos/1300361/pexels-photo-1300361.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=320" alt="black-hog-prone-lying-on-soil-under-shade-of-tree" width="250">
+              <p class="label">Pig</p>
+            </div>
+          </div>
+
+        <!--  -->
+
+
+          <!-- <button class="chat-button"></button> -->
+        
+        
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+:root {
+  /** ============ CSS-змінні ============ */
+  --color-font-body: #220c0c;
+  --color-title-lesson: #094b00;
+  --color-title-section: rgb(17, 168, 0);
+  --color-title-subsection: rgb(1, 192, 5);
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
+  padding: 20px 20px 150px;
+  color: var(--color-font-body);
+}
+
+.title-lesson {
+  text-align: center;
+  color: var(--color-title-lesson);
+}
+
+.title-section {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--color-title-section);
+}
+
+.title-subsection {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-style: italic;
+  color: var(--color-title-subsection);
+}
+
+.part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+/*! 1.position: static */
+
+.part_1 > .holder {
+  background: #fee;
+  width: 500px;
+}
+.part_1 > .holder >  h2 {
+  position: static;
+  left: -10%;
+  background: #aef;
+  margin: 0;
+}
+
+/*! 2.position: relative */
+.part_2 > .holder {
+  background: #fee;
+  width: 500px
+}
+.part_2 > .holder > h2 {
+  position: relative;
+  top: 10px;
+  background: #aef;
+  margin: 0;
+}
+
+/*! 3-1.position: absolute від <body> */
+.part_31 > .holder {
+  background: #fee;
+  width: 500px
+}
+.part_31 > .holder > h2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #aef;
+  margin: 0;
+}
+
+/*! 3-2.position: absolute від <father> */
+.part_32 .holder {
+  background: #fee;
+  width: 500px
+}
+
+.part_32 .main-father {
+  position: relative;
+  background: rgb(255, 181, 181);
+  width: 700px;
+  padding: 10px;
+}
+
+.part_32 .holder > h2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #aef;
+  margin: 0;
+}
+
+/*! 4.position: fixed */
+
+#top {
+  /* position: fixed; */
+  /* right: 10px; */
+  /* top: 10px; */
+  background: #fee;
+  border: 2px double rebeccapurple;
+}
+
+/*! 6.Властивість z-index */
+.part_6 .container {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  outline: 4px double rgb(61, 56, 0);
+}
+
+.part_6 .box {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 64px;
+  color: #fff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.part_6 .box:nth-child(1) {
+  top: 20px;
+  left: 130px;
+  background-color: #1789fc;
+  z-index: 2;
+}
+
+.part_6 .box:nth-child(2) {
+  top: 30px;
+  left: 230px;
+  background-color: #ef233c;
+  z-index: 2;
+}
+
+.part_6 .box:nth-child(3) {
+  top: 140px;
+  left: 220px;
+  background-color: #ffd07b;
+  z-index: 1;
+}
+
+.part_6 .box:nth-child(4) {
+  top: 120px;
+  left: 120px;
+  background-color: #4caf50;
+}
+
+/* практикааааа */
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  margin: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.box.relative {
+  position: relative;
+  top: 120px;
+  left: 120px;
+}
+
+.box:nth-child(1) {
+  background-color: teal;
+}
+
+.box:nth-child(2) {
+  background-color: orange;
+}
+
+.box:nth-child(3) {
+  background-color: palevioletred;
+}
+
+/*  */
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.thumb {
+  position: relative;
+  margin: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.thumb > .label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px 16px;
+  border-bottom-left-radius: 4px;
+
+  font-family: sans-serif;
+  font-size: 24px;
+  background-color: #2196f3;
+  color: #fff;
+}
+
+/*  */
+.chat-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1653/1653630.png");
+  background-size: contain;
+
+  cursor: pointer;
+}
+
