@@ -1,0 +1,55 @@
+:root {
+  /** ============ CSS-змінні ============ */
+  --color-font-body: #220c0c;
+  --color-title-lesson: #094b00;
+  --color-title-section: rgb(17, 168, 0);
+  --color-title-subsection: rgb(1, 192, 5);
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  padding: 20px 20px 150px;
+  color: var(--color-font-body);
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Респонсивні зображення */
+
+.thumb {
+  max-width: 760px;
+  min-width: 320px;
+  /* margin: 0 auto; */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Респонсивні фонові зображення */
+
+/* 1x screens, default value, 320x240 image */
+.box {
+  margin: 0 auto;
+  width: 320px; /* необхідно задати розмір фону елемента */
+  height: 240px;
+  background-image: url("https://picsum.photos/id/237/320/240");
+  background-size: 320px 240px;
+  /* background-size: cover; */ /* коли в елемента немає фіксованої ширини і висоти*/
+}
+
+/* 2x screens, retina, 640x480 image */
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .box {
+    background-image: url("https://picsum.photos/id/237/640/480");
+  }
+}
+
