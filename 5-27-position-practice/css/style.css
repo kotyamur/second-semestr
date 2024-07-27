@@ -209,7 +209,6 @@ html {
 
 .page-header > a {
   display: block;
-  padding: 10px;
   color: #094b00;
   cursor: pointer;
 }
@@ -218,6 +217,29 @@ html {
   color: #220c0c;
 }
 
+.page-header .menu-list__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  transition: color var(--typical-transition-duration) var(--typical-transition-timing-function);
+}
+.page-header .menu-list__link--current {
+  color: blue;
+}
+.menu-list__link--current::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: blue;
+  position: absolute;
+  bottom: 0;
+  border-radius: 2px;
+}
 section {
   padding: 100px 0;
 }
