@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Montserrat', serif;
-  padding: 20px 20px 150px;
+  padding: 15px 15px 150px;
   color: var(--color-font-body);
 }
 
@@ -37,11 +37,11 @@ img {
 /* 1x screens, default value, 320x240 image */
 .box {
   margin: 0 auto;
-  width: 320px; /* необхідно задати розмір фону елемента */
-  height: 240px;
-  background-image: url("https://picsum.photos/id/237/320/240");
-  background-size: 320px 240px;
-  /* background-size: cover; */ /* коли в елемента немає фіксованої ширини і висоти*/
+  width: 1600px; /* необхідно задати розмір фону елемента */
+  height: 600px;
+  background-image: url("../images/ImgBg.jpg");
+  /* background-size: 1600px 600px; */
+  background-size: cover; /* коли в елемента немає фіксованої ширини і висоти*/
 }
 
 /* 2x screens, retina, 640x480 image */
@@ -49,7 +49,153 @@ img {
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .box {
-    background-image: url("https://picsum.photos/id/237/640/480");
+    background-image: url("../images/ImgBg2x.jpg");
   }
 }
 
+/* Adaptive */
+
+.boxAdaptive {
+  margin: 0 auto;
+  width: 100%;
+  height: 370px;
+  background-image: url("../images/Subcribe1xmob.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .boxAdaptive {
+    background-image: url("../images/Subcribe2xmob.jpg");
+  }
+}
+
+@media (min-width: 375px) {
+  .boxAdaptive {
+    margin: 0 auto;
+    width: 375px;
+    height: 370px;
+    background-image: url("../images/Subcribe1xmob.jpg");
+    background-size: 375px 370px;
+  }
+  
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .boxAdaptive {
+      background-image: url("../images/Subcribe2xmob.jpg");
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .boxAdaptive {
+    width: 768px;
+    background-image: url("../images/Subcribe1xtab.jpg");
+    background-size: 768px 370px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    .boxAdaptive {
+      background-image: url("../images/Subcribe2xtab.jpg");
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .boxAdaptive {
+    width: 1200px;
+    background-image: url("../images/Subcribe1xdesc.jpg");
+    background-size: 1200px 370px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    .boxAdaptive {
+      background-image: url("../images/Subcribe2xdesc.jpg");
+    }
+  }
+}
+
+
+/*  Респонсивний елемент img */
+/* Дескриптор x */
+
+.thumbX {
+  max-width: 370px;
+  min-width: 320px;
+  /* margin: 0 auto; */
+}
+
+/* Дескриптор w */
+
+.thumbX {
+  max-width: 370px;
+  min-width: 320px;
+  /* margin: 0 auto; */
+}
+
+/* adaptive-list */
+
+.adaptive-list {
+  width: 100%;
+  outline: 1px dashed green;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.adaptive-item {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 20px;
+  outline: 1px dashed rgb(128, 0, 0);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+@media (min-width: 375px) {
+  .adaptive-item {
+    width: 335px;
+    height: 270px;
+  }
+}
+
+@media (min-width: 768px) {
+  .adaptive-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  .adaptive-item {
+    width: 336px;
+    margin: 0;
+  }
+
+}
+
+@media (min-width: 960px) and (max-width: 1200px) {
+  .adaptive-list {
+    gap: 40px;
+    padding: 0 41px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .adaptive-list {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .adaptive-item {
+    width: 270px;
+  }
+}

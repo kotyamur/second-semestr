@@ -23,13 +23,13 @@
 
     <!-- x1 -->
     <img src="https://picsum.photos/id/237/320/240" alt="Cute puppy" width="320" height="240">
-
+    <!-- <img src="./images/img1x.jpg" alt="designe" width="370" height="294"> -->
     <!-- x2 -->
     <img src="https://picsum.photos/id/237/640/480" alt="Cute puppy" width="320" height="240">
-
+    <!-- <img src="./images/img2x.jpg" alt="designe" width="370" height="294"> -->
     <!-- x3 -->
     <img src="https://picsum.photos/id/237/960/720" alt="Cute puppy" width="320" height="240">
-
+    <!-- <img src="./images/img3x.jpg" alt="designe" width="370" height="294"> -->
     <!-- Респонсивні зображення -->
     <h2>Респонсивні зображення</h2>
     <p>техніка простого респонсивного контентного зображення </p>
@@ -46,18 +46,23 @@
     </ul>
 
     <div class="thumb">
-      <img src="https://unsplash.it/960/480" alt="A random image" />
+      <img src="./images/landscape.webp" alt="A random image" />
     </div>
 
     <!-- Респонсивні фонові зображення -->
     <h2>Респонсивні фонові зображення</h2>
     <p>існують медіа-функції, що дозволяють визначити щільність пікселів екрану в CSS. Всередині набору таких медіа-функцій перевизначаємо шлях до фонового зображення.</p>
-    <div class="box"></div>
+    <!-- <div class="box"></div> -->
+    <div class="boxAdaptive"></div>
     <p>dpi (dots per inch) - кількість фізичних пікселів на дюйм екрана. На екранах стандартної щільності пікселів в одному дюймі 96 точок.
     </p>
     <p>
       dppx (dots per pixel) - кількість фізичних пікселів в одному CSS-пікселі, іншими словами - це щільність пікселів. 1dppx = 96dpi.
     </p>
+
+<!-- Інструменти розробника -->
+    <h2>Інструменти розробника, дивитись завантаження картинок</h2>
+    <img src="./images/Screenshot_1.png">
 
     <!-- Респонсивний елемент img -->
     <h2>Респонсивний елемент img</h2>
@@ -73,13 +78,18 @@
       Єдиний недолік такого підходу полягає в обмеженості критеріїв, за якими браузер вибирає зображення - тільки щільність пікселів екрану.
     </p>
 
-    <div class="thumb">
+    <div class="thumbX">
       <img 
-        srcset="https://picsum.photos/id/237/320/240 1x, https://picsum.photos/id/237/640/480 2x" 
-        src="https://picsum.photos/id/237/320/240" 
-        alt="Cute puppy" 
+        srcset="./images/img1x.jpg 1x, 
+        ./images/img2x.jpg 2x,
+        ./images/img3x.jpg 3x"
+        src="./images/img1x.jpg" 
+        alt="designe" 
+        width="370" height="294"
       />
     </div>
+
+    
 
     <!-- Дескриптор w -->
     <h3>Variant - Дескриптор w</h3>
@@ -94,12 +104,12 @@
     <p>
       необхідно використовувати атрибут sizes, щоб підказати браузеру приблизний розмір полотна, на якому в браузері буде малюватися зображення
     </p>
-    <b>якщо зображення на екрані завжди буде 300px</b>
-    <div class="thumb">
+    <b>якщо зображення на екрані завжди буде 370px</b>
+    <div class="thumbW">
       <img
-        srcset="photo-300.jpg 300w, photo-600.jpg 600w, photo-1200.jpg 1200w"
-        sizes="300px"
-        src="photo-300.jpg"
+        srcset="./images/box1x.jpg 370w, ./images/box2x.jpg 740w, ./images/box3x.jpg 1110w"
+        sizes="370px"
+        src="./images/box1x.jpg"
         alt="Опис зображення для всіх версій"
       />
     </div>
@@ -108,14 +118,25 @@
     <p>
       Браузер читає медіа-вирази, зазначені в атрибуті sizes, зліва направо і обирає перше підходяще, тому треба уважно стежити за порядком їх оголошення.
     </p>
-    <div class="thumb">
-      <img
-        srcset="photo-300.jpg 300w, photo-600.jpg 600w, photo-1200.jpg 1200w"
-        sizes="(min-width: 900px) 600px, (min-width: 600px) 300px, 100vw"
-        src="photo-300.jpg"
-        alt="Опис зображення для всіх версій"
-      />
-    </div>
+    
+    <ul class="adaptive-list">
+      <li class="adaptive-item">
+        <img
+          srcset="./images/hazelnutsMob1x.jpg 335w, 
+          ./images/hazelnutsMob2x.jpg 670w, 
+          ./images/hazelnutsTab1x.jpg 336w, 
+          ./images/hazelnutsTab2x.jpg 672w, 
+          ./images/hazelnutsDesc1x.jpg 270w, 
+          ./images/hazelnutsDesc2x.jpg 540w"
+          sizes="(min-width: 1200px) 270px, (min-width: 768px) 336px, (min-width: 375px) 335px, 100vw"
+          src="./images/hazelnutsMob1x.jpg"
+          alt="Опис зображення для всіх версій"
+        />
+      </li>
+      <li class="adaptive-item"></li>
+      <li class="adaptive-item"></li>
+      <li class="adaptive-item"></li>
+    </ul>
 
     <!-- Як браузер вибирає -->
 
@@ -144,9 +165,9 @@
     </picture>
 
     <picture>
-      <source srcset="photo.webp 1x, photo@2x.webp 2x" type="image/webp" />
-      <source srcset="photo.jpg 1x, photo@2x.jpg 2x" type="image/jpeg" />
-      <img src="photo.jpg" alt="Кіт" />
+      <source srcset="./images/chocolate1x.webp 1x, ./images/chocolate2x.webp 2x" type="image/webp" />
+      <source srcset="./images/chocolate1x.jpg 1x, ./images/chocolate2x.jpg 2x" type="image/jpeg" />
+      <img src="./images/chocolate1x.jpg" alt="chocolate" sizes="344px"/>
     </picture>
 
     <h2>Кадрування (art direction)</h2>
@@ -159,14 +180,18 @@
       <source 
         srcset="https://picsum.photos/id/237/400/600 400w, https://picsum.photos/id/237/800/1200 800w" 
         media="(max-width: 600px)" 
-        sizes="(min-width: 480px) 480px, 100vw">
+        sizes="(min-width: 480px) 480px, 100vw"
+        >
 
       <source 
         srcset="https://picsum.photos/id/237/800/400 800w, https://picsum.photos/id/237/1600/800 1600w" 
         media="(min-width: 601px)" 
-        sizes="(min-width: 800px) 800px, 100vw">
+        sizes="(min-width: 800px) 800px, 100vw"
+        >
 
-      <img src="https://picsum.photos/id/237/300/200" alt="Cute puppy">
+      <img src="https://picsum.photos/id/237/300/200" 
+        alt="Cute puppy" 
+        sizes="(min-width: 800px) 800px, 100vw">
     </picture>
 
 
