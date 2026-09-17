@@ -184,6 +184,31 @@
         // bodyScrollLock.enableBodyScroll(document.body);
         body.classList.remove('no-scroll');
       });
+
+      // Закриваємо меню при кліку на пункт 
+
+      const navLinks = document.querySelectorAll('.mobile-menu a'); 
+
+      navLinks.forEach(link => { 
+        link.addEventListener('click', (e) => { 
+
+          e.preventDefault()
+          mobileMenu.classList.remove('is-open'); 
+        }); 
+      });
+
+      // Закриваємо меню при кліку поза ним 
+
+      // document.addEventListener('click', (event) => { 
+      //   // event.target — елемент, на який клікнули 
+      //   // contains() — перевіряє, чи є елемент всередині nav 
+      //   const isClickInsideNav = mobileMenu.contains(event.target); 
+
+      //   if (!isClickInsideNav) { 
+      //     mobileMenu.classList.remove('is-open'); 
+      //   } 
+      // });
+
     })();
   </script>
 </body>
